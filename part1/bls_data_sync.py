@@ -19,7 +19,7 @@ def lambda_handler(event, context):
     deleted_list = bucket_objects.copy()
 
     # Request the data source and parse it
-    headers = {"User-Agent": "MyDataDownloader (shreeshma09@gmail.com)"}
+    headers = {"User-Agent": "MyDataDownloader (xxx@gmail.com)"}
     r = requests.get(BLS_API, headers=headers)
     soup = BeautifulSoup(r.text, 'html.parser')
 
