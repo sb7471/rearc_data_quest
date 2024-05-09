@@ -161,6 +161,6 @@ in the Lambda function in order prevent the timeout error while fetching the dat
 - Zipped required dependencies and script in `/part4/CloudFormation/daily_data_sync_lambda.yaml`. For ease of viewing the actual script check `/part4/data_analytics.py`.
 
 - You can find all the screenshots related to execution in this document [Evidence]()
-- Used [draw.io](https://draw.io/) just to visualize what the infrastructure looks like:
+- Below is the sample diagram of the current repo architecture
 
 ![AWS Architecture Diagram](architecture_diagram.png)
