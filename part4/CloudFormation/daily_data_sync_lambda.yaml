@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  # CloudWatch Events Rule for scheduling LambdaFunction1
+  LambdaFunction1ScheduleRule:
+    Type: AWS::Events::Rule
+    Properties:
+      ScheduleExpression: cron(15 2 * * ? *)
+      State: ENABLED
+      Targets:
+        - Arn: arn:aws:lambda:us-east-2:975050351071:function:daily_data_sync_lambda
+          Id: LambdaFunction1Target
+
+  # CloudWatch Events Rule for triggering LambdaFunction2 when SQS receives a message
+  LambdaFunction2TriggerRule:
+    Type: AWS::Lambda::EventSourceMapping
+    Properties:
+      BatchSize: 1
+      EventSourceArn: arn:aws:sqs:us-east-2:975050351071:PopulationQueue
+      FunctionName: data_analytics
